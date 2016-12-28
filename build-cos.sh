@@ -74,6 +74,12 @@ DIR_ROOT=$(pwd)
 DIR_OUT=$(readlink $DIR_ROOT/out)
 [ -z "$DIR_OUT" ] && DIR_OUT="$DIR_ROOT/out"
 
+# Make sure everything looks sane so far
+ if [ ! -d "$DIR_ROOT/vendor/cos" ]; then
+         echo -e "${CLR_BLD_RED}error: insane root directory ($DIR_ROOT)${CLR_RST}"
+         exit 1
+ fi
+ 
 # Pick the default thread count (allow overrides from the environment)
 if [ -z "$THREADS" ]; then
         if [ "$(uname -s)" = 'Darwin' ]; then
