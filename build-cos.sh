@@ -36,12 +36,12 @@ clear
 
 # Cosmic OS ASCII
 sleep 2
-        echo -e "${CLR_BLD_BLU}_________  ________    _________${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}\_   ___ \ \_____  \  /   _____/${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}/    \  \/  /   |   \ \_____  \ ${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}\     \____/    |    \/        \${CLR_RST}"
-        echo -e "${CLR_BLD_BLU} \______  /\_______  /_______  /${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}        \/         \/        \/ ${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}_________  ________    _________ ${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}\_   ___ \ \_____  \  /   _____/ ${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}/    \  \/  /   |   \ \_____  \  ${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}\     \____/    |    \/        \ ${CLR_RST}"
+        echo -e "${CLR_BLD_BLU} \______  /\_______  /_______  / ${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}        \/         \/        \/  ${CLR_RST}"
 	    echo -e ""
 	    echo -e "${CLR_BLD_BLU}================================${CLR_RST}"
 	    echo -e "${CLR_BLD_BLU}         Cosmic OS 7.1.1        ${CLR_RST}"
@@ -73,12 +73,6 @@ cd $(dirname $0)
 DIR_ROOT=$(pwd)
 DIR_OUT=$(readlink $DIR_ROOT/out)
 [ -z "$DIR_OUT" ] && DIR_OUT="$DIR_ROOT/out"
-
-# Make sure everything looks sane so far
-if [ ! -d "$DIR_ROOT/vendor/cos" ]; then
-        echo -e "${CLR_BLD_RED}error: insane root directory ($DIR_ROOT)${CLR_RST}"
-        exit 1
-fi
 
 # Pick the default thread count (allow overrides from the environment)
 if [ -z "$THREADS" ]; then
